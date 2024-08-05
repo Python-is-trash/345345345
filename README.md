@@ -1,8 +1,4 @@
 <div align="center">
-<img src="https://raw.githubusercontent.com/Python-is-trash/345345345/main/assets/kematian.png", width="400", height="400">
-</div>
-
-<div align="center">
   <a href="https://github.com/Python-is-trash/345345345/actions/workflows/build_builder.yml">
   <img src="https://img.shields.io/github/actions/workflow/status/Python-is-trash/345345345/build_builder.yml?style=flat&label=builder-src&color=fa7202" alt="Builder Src"></a>
   <a href="https://github.com/Python-is-trash/345345345/actions/workflows/build_backend.yml">
