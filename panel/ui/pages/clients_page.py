@@ -1,9 +1,7 @@
 import os
 import shutil
 import logging
-
 import aiosqlite
-
 from nicegui import ui
 
 columns = [
@@ -51,9 +49,7 @@ columns = [
     },
 ]
 
-
-async def clients_page_stuff(db_path: str) -> None:
-    """Clients page to view the clients that have connected to the server."""
+async def clients_page_stuff(db_path: str, is_host: bool = True) -> None:
     data = []
     seen_entries = set()
 
@@ -81,21 +77,24 @@ async def clients_page_stuff(db_path: str) -> None:
     with ui.card().classes(
         "w-full h-full justify-center no-shadow border-[1px] border-gray-200 rounded-lg"
     ):
-        with ui.table(
-            columns,
+        table = ui.table(
+            columns=columns,
             rows=data,
             pagination=10,
             selection="single",
             title="Clients Page",
-        ).classes("h-full w-full bordered") as table:
-            with table.add_slot("top-right"):
-                with ui.input(placeholder="Search").props("type=search").bind_value(
-                    table, "filter"
-                ).add_slot("append"):
-                    ui.icon("search")
-            with table.add_slot("bottom-row"):
-                with table.row():
-                    with table.cell():
+        ).classes("h-full w-full bordered")
+        
+        with table.add_slot("top-right"):
+            with ui.input(placeholder="Search").props("type=search").bind_value(
+                table, "filter"
+            ).add_slot("append"):
+                ui.icon("search")
+        
+        with table.add_slot("bottom-row"):
+            with table.row():
+                with table.cell():
+                    if is_host:  # Check if the user is the host
                         ui.button("Open").on_click(
                             lambda: open_in_explorer(
                                 os.path.join(
@@ -107,27 +106,21 @@ async def clients_page_stuff(db_path: str) -> None:
                             )
                         ).bind_visibility_from(
                             table, "selected", backward=lambda val: bool(val)
-                        ).props(
-                            "flat fab-mini"
-                        )
+                        ).props("flat fab-mini")
+                        
                         ui.button("Remove").on_click(
                             lambda: remove_entry(table.selected[0]["hwid"], db_path)
                         ).bind_visibility_from(
                             table, "selected", backward=lambda val: bool(val)
-                        ).props(
-                            "flat fab-mini"
-                        )
-
+                        ).props("flat fab-mini")
 
 def open_in_explorer(path: str) -> None:
     """Open the folder in the explorer."""
     os.system(f"explorer {path}")
 
-
 async def remove_entry(hwid: str, db_path: str) -> None:
-    """REMOVE THE ROW FROM THE DATABASE WITH THE FOLLOWING HWID"""
+    """Remove the row from the database with the following HWID"""
     async with aiosqlite.connect(db_path) as db:
-        # get the logs path using the hwid
         cursor = await db.execute(
             "SELECT filepath FROM entries WHERE hwid = ?", (hwid,)
         )
@@ -136,10 +129,8 @@ async def remove_entry(hwid: str, db_path: str) -> None:
         await db.commit()
     logging.info(f"Removed entry with HWID: {hwid}")
 
-    # go back 1 path
+    # Go back 1 path
     logs_path = logs_path[0].split("\\")[:-1]
     shutil.rmtree("\\".join(logs_path))
 
     ui.navigate.reload()
-
-    # shutil.rmtree(os.path.join(logs_path[0], hwid))
