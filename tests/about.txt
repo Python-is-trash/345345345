@@ -1,51 +1,5 @@
-⚔️ 〢 Features
-Stealer
-No Dependent Clipper (exe does not need to stay running for the clipper to work)
+This tool is a comprehensive data-stealing software designed to extract sensitive information from various platforms. It can steal passwords, cookies, and autofill data from popular browsers, grab cryptocurrency wallets, and capture session data from applications like Discord, Telegram, Instagram, and many more. Additionally, it can collect files, screenshots, and 2FA codes, while operating stealthily with features like hidden startup and automatic reactivation. The tool also bypasses antivirus detection by adding exclusions and manipulating copied wallet addresses without needing to run continuously.
 
-Wallet Injection 12words + passwords [ Exodus, Atomic ]
+The creator assumes no responsibility for any actions taken with this product. It is provided for educational and research purposes only. Use it at your own risk.
 
-Percistance Hidden Startup + if reg get deleted = auto come back :)
-
-Files Stealer [.txt, .doc, .docx, .rdp, .pdf and more]
-
-Binder, will add exclusion to your file to bypass defender.
-
-Discord Token, Friends with rare badges, Credit card
-
-Discord Info - Username, Phone number, Email, Billing, Nitro Status & Backup Codes
-
-Discord About Me changer, HQ Guilds Admin/Owner
-
-Steal Backup 2FA Code [ Discord, Epic Games, Github ]
-
-Grabs crypto wallets - 💸 Zcash 🚀 Armory 📀 Bytecoin 💵 Jaxx 💎 Exodus 📉 Ethereum 🔨 Electrum 🕹️ AtomicWallet 💹 Guarda ⚡ Coinomi 🦊 MetaMask
-
-Browser (Chrome, Opera, Firefox, OperaGX, Edge, Brave, Yandex) - Passwords, Cookies, Autofill & History (Searches for specific keywords such as PayPal, Coinbase etc. in them)
-
-Screenshots all screen
-
-Telegram Session stealer
-
-Riot Games Session stealer
-
-FTP stealer (FileZilla)
-
-VPN Stealer
-
-Growtopia Stealer
-
-Minecraft Session stealer & validator
-
-Instagram Session stealer & validator
-
-Roblox Session stealer & validator
-
-Steam Session stealer & validator
-
-TikTok Session stealer & validator
-
-Twitter Session stealer & validator
-
-Reddit Session stealer & validator
-
-Epic Games Launcher Session stealer
+Professional creator: t.me/V_Lucky_V
